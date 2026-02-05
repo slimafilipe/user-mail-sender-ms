@@ -1,9 +1,9 @@
-package dev.filipe.user;
+package dev.filipe.user.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public record dto(
+public record UserDto(
         @NotBlank String name,
         @NotBlank @Email String email) {
 }
