@@ -1,9 +1,4 @@
-/email/.env
-/user/.env
-/user/.env
-
-/email/HELP.md
-/user/HELP.md
+HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
