@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserProducer {
 
+
     final RabbitTemplate rabbitTemplate;
 
     @Value("${EMAIL_QUEUE}")
