@@ -1,17 +1,18 @@
 package dev.filipe.email.config;
 
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tools.jackson.databind.ObjectMapper;
-import tools.jackson.databind.json.JsonMapper;
+
 
 @Configuration
 public class RabbitMQ {
 
-    private final String queueName = "email-queue";
+    @Value("${EMAIL_QUEUE}")
+    private String queueName;
 
     @Bean
     public Queue queue() {
@@ -19,7 +20,7 @@ public class RabbitMQ {
     }
 
     @Bean
-    public JacksonJsonMessageConverter messageConverter() {
+    public MessageConverter messageConverter() {
         return new JacksonJsonMessageConverter();
     }
 }
